@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rspec/api_doc'
 
-describe Rspec::ApiDoc do
+RSpec.describe RSpec::ApiDoc do
   it 'has a version number' do
-    expect(Rspec::ApiDoc::VERSION).not_to be nil
+    expect(RSpec::ApiDoc::VERSION).not_to be nil
   end
 
   it 'does something useful' do
