@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Radius Networks"]
   spec.email         = ["support@radiusnetworks.com"]
 
-  spec.summary       = %q{ Mini DSL on top of RSpec for writing API docs }
-  spec.description   = %q{
+  spec.summary       = "Mini DSL on top of RSpec for writing API docs"
+  spec.description   = <<-DESC.strip
     Mini DSL built on RSpec for writing executable API docs for Rack apps.
-  }.strip
+  DESC
   spec.homepage      = "https://github.com/radiusnetworks/rspec-api_doc"
   spec.license       = "Apache-2.0"
 

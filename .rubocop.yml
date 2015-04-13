@@ -1,0 +1,45 @@
+AllCops:
+  Exclude:
+    # Ignore Bundler standalone config
+    - 'bundle/**/*'
+    # Ignore bundler generated binstubs
+    - 'bin/**/*'
+
+AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+BlockDelimiters:
+  EnforcedStyle: semantic
+
+# We use YARD to enforce documentation. It works better than rubocop's
+# enforcement...rubocop complains about the places we re-open
+# `RSpec::Expectations` and `RSpec::Matchers` w/o having doc commments.
+Documentation:
+  Enabled: false
+
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()      # double-quoted string
+    '%i': '[]'    # array of symbols
+    '%q': ()      # single-quoted string
+    '%Q': ()      # double-quoted string
+    '%r': '{}'    # regular expression pattern
+    '%s': ()      # a symbol
+    '%w': '[]'    # array of single-quoted strings
+    '%W': '[]'    # array of double-quoted strings
+    '%x': ()      # a shell command as a string
+
+RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# We don't care about single vs double qoutes.
+StringLiterals:
+  Enabled: false
+

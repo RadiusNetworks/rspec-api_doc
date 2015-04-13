@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in rspec-api_doc.gemspec
 gemspec
 
+group :development do
+  gem 'rubocop', '~> 0.30.0', require: false
+end
+
 group :documentation do
   gem 'yard', '~> 0.8.7', require: false
 
