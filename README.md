@@ -1,4 +1,4 @@
-# RSpec API Documenter [![Build Status](https://secure.travis-ci.org/radiusnetworks/rspec-api_doc.svg?branch=master)](http://travis-ci.org/radiusnetworks/rspec-api_doc) [![Code Climate](https://codeclimate.com/github/radiusnetworks/rspec-api_doc.svg)](https://codeclimate.com/github/radiusnetworks/rspec-api_doc)
+# RSpec API Documenter [![Build Status](https://travis-ci.org/RadiusNetworks/rspec-api_doc.svg?branch=master)](https://travis-ci.org/RadiusNetworks/rspec-api_doc) [![Code Climate](https://codeclimate.com/github/RadiusNetworks/rspec-api_doc/badges/gpa.svg)](https://codeclimate.com/github/RadiusNetworks/rspec-api_doc)
 
 Generate markdown based API documentation from your executable specs.
 
