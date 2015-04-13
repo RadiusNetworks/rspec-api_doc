@@ -2,6 +2,7 @@
 /.yardoc
 /.rspec-local
 /Gemfile.lock
+/Gemfile-custom
 /_yardoc/
 /coverage/
 /doc/

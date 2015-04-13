@@ -1,0 +1,7 @@
+group :development do
+  gem 'interactive_rspec'
+  gem 'guard-rspec'
+  gem 'spork'
+  gem 'ruby-prof'
+  gem 'pry-byebug'
+end

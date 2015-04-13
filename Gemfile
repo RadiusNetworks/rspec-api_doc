@@ -10,3 +10,6 @@ group :documentation do
   gem 'redcarpet',     '2.1.1', platform: :mri
   gem 'github-markup', '0.7.2', platform: :mri
 end
+
+custom_gemfile = File.expand_path("../Gemfile-custom", __FILE__)
+eval_gemfile custom_gemfile if File.exist?(custom_gemfile)
