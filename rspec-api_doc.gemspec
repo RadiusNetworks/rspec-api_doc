@@ -5,7 +5,7 @@ require 'rspec/api_doc/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-api_doc"
-  spec.version       = Rspec::ApiDoc::VERSION
+  spec.version       = RSpec::ApiDoc::VERSION
   spec.authors       = ["Radius Networks"]
   spec.email         = ["support@radiusnetworks.com"]
 

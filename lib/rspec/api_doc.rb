@@ -1,6 +1,6 @@
 require "rspec/api_doc/version"
 
-module Rspec
+module RSpec
   module ApiDoc
     # Your code goes here...
   end
