@@ -1,0 +1,71 @@
+# <%= title %>
+
+<% sections.each do |section| %>
+- [<%= section.header %>](#<%= section.header_ref %>)
+<% end %>
+<% if explanation.present? %>
+
+<%= explanation %>
+
+<% end %>
+<% sections.each do |section| %>
+
+## <%= section.header %> <a href="#<%= section.header_ref %>" class="header-link"></a>
+
+```
+<%= section.http_method %> <%= section.request_path %>
+
+```
+
+<% if section.explanation.present? %>
+<%= section.explanation %>
+
+
+<% end %>
+<% if section.parameters? %>
+### Parameters <a href="#<%= section.header_ref %>-parameters" class="header-link"></a>
+
+All <%= resource %> **must** be sent in an array nested under a top level
+`<%= resource %>` parameter.
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+<% section.parameters do |parameter| %>
+| `<%= parameter.name %>` | `<%= parameter.type %>` | <%= '**Required.** ' if parameter.required? %><%= parameter.description %> |
+<% end %>
+
+### Example <a href="#<%= section.header_ref %>-example" class="header-link"></a>
+
+<% if section.example_explanation.present? %>
+<%= section.example_explanation %>
+
+<% end %>
+```json
+<%= section.request_json %>
+
+```
+
+<% end %>
+### Response <a href="#<%= section.header_ref %>-response" class="header-link"></a>
+
+```
+Status: <%= section.response_status %>
+<% section.response_headers do |header| %>
+<%= header.name %>: <%= header.content %>
+
+<% end %>
+```
+<% if section.response_json %>
+```json
+<%= section.response_json %>
+
+```
+<% end %>
+
+### Curl Example <a href="#<%= section.header_ref %>-curl-example" class="header-link"></a>
+
+```
+<%= RSpec::ApiDoc::StandardCurlExample.new(section).build %>
+
+```
+<% end %>

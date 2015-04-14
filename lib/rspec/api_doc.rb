@@ -5,6 +5,6 @@ require "rspec/api_doc/version"
 
 module RSpec
   module ApiDoc
-    # Your code goes here...
+    autoload :DSL, "rspec/api_doc/dsl"
   end
 end

@@ -24,6 +24,15 @@ BlockDelimiters:
 Documentation:
   Enabled: false
 
+# Most uses of double negation are bad but we use `!!obj` as predicate method
+# returns
+DoubleNegation:
+  Enabled: false
+
+# This complains about aligning multiline method chaining with the dots
+MultilineOperationIndentation:
+  Enabled: false
+
 PercentLiteralDelimiters:
   PreferredDelimiters:
     '%':  ()      # double-quoted string
@@ -43,3 +52,5 @@ RedundantReturn:
 StringLiterals:
   Enabled: false
 
+TrailingComma:
+  EnforcedStyleForMultiline: comma

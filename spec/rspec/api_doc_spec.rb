@@ -12,7 +12,7 @@ RSpec.describe "RSpec::ApiDoc" do
       "-Ibundle",
       "-Ilib",
       "-e",
-      'require "rspec/core"; require "rspec/api_doc"'
+      'require "rspec/core"; require "rspec/api_doc"',
     ]
     output = IO.popen(command, err: %i[ child out ])
 
