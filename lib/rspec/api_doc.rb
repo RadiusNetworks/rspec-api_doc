@@ -8,3 +8,5 @@ module RSpec
     autoload :DSL, "rspec/api_doc/dsl"
   end
 end
+
+require 'rspec/api_doc/railtie' if defined?(Rails)
