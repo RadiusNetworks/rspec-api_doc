@@ -46,7 +46,7 @@ you by adding `:api_doc` to the example group. Otherwise, you can manually
 include it:
 
 ```ruby
-include RSpec::ApiDoc::DSL
+extend RSpec::ApiDoc::DSL
 ```
 
 ## Usage
