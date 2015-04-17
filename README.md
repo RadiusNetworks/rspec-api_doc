@@ -73,7 +73,7 @@ RSpec.describe "My API Root Endpoint", :api_doc, type: :request do
 
   shared_context "general headers" do
     def json_authorization_headers(token = "0123456789abcdef")
-      json_content_headers.merge('AUTHORIZATION' => :Token token=\"#{token}\")
+      json_content_headers.merge('AUTHORIZATION' => "Token token=\"#{token}\"")
     end
 
     header 'Authorization', 'Token token="0123456789abcdef"'
