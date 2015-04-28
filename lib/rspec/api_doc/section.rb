@@ -1,4 +1,5 @@
 require 'json'
+require 'rack'
 require_relative 'explainable'
 require_relative 'header'
 require_relative 'strings'
@@ -45,7 +46,7 @@ module RSpec
 
       def response_status
         code = @_group.response.status
-        title = Rack::Utils::HTTP_STATUS_CODES[code]
+        title = ::Rack::Utils::HTTP_STATUS_CODES[code]
         "#{code} #{title}"
       end
 
@@ -59,8 +60,13 @@ module RSpec
       end
 
       def response_json
-        return unless @_group.response.json_body
-        JSON.pretty_generate(@_group.response.json_body)
+        return unless response_json_body
+        JSON.pretty_generate(response_json_body)
+      end
+
+      def response_json_body
+        body = @_group.response.body
+        JSON.parse(body) unless Strings.blank?(body)
       end
 
       def include_headers
