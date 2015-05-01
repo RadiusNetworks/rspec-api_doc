@@ -12,11 +12,13 @@
 
 ## <%= section.header %> <a href="#<%= section.header_ref %>" class="header-link"></a>
 
+<% if section.recorded_request? %>
 ```
 <%= section.http_method %> <%= section.request_path %>
 
 ```
 
+<% end %>
 <% if section.explanation.present? %>
 <%= section.explanation %>
 
@@ -34,6 +36,7 @@ All <%= resource %> **must** be sent in an array nested under a top level
 | `<%= parameter.name %>` | `<%= parameter.type %>` | <%= '**Required.** ' if parameter.required? %><%= parameter.description %> |
 <% end %>
 
+<% if section.recorded_request? %>
 ### Example <a href="#<%= section.header_ref %>-example" class="header-link"></a>
 
 <% if section.example_explanation.present? %>
@@ -46,6 +49,8 @@ All <%= resource %> **must** be sent in an array nested under a top level
 ```
 
 <% end %>
+<% end %>
+<% if section.recorded_response? %>
 ### Response <a href="#<%= section.header_ref %>-response" class="header-link"></a>
 
 ```
@@ -68,4 +73,5 @@ Status: <%= section.response_status %>
 <%= RSpec::ApiDoc::StandardCurlExample.new(section).build %>
 
 ```
+<% end %>
 <% end %>
