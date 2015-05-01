@@ -44,6 +44,14 @@ module RSpec
         @_group.request.path_info unless @_group.request.nil?
       end
 
+      def recorded_request?
+        !@_group.request.nil?
+      end
+
+      def recorded_response?
+        !@_group.response.nil?
+      end
+
       def response_status
         code = @_group.response.status
         title = ::Rack::Utils::HTTP_STATUS_CODES[code]
