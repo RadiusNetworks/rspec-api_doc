@@ -57,7 +57,7 @@ The DSL extensions are available to use along side the existing RSpec syntax:
 require 'rails_helper'
 require 'rspec/api_doc'
 
-RSpec.describe "My API Root Endpoint", :api_doc, type: :request do
+RSpec.describe "My API Root Endpoint", :api_doc, doc: :json_api, type: :request do
 
   resource_endpoint '/api/v1'
 
