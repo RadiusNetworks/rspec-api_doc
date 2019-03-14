@@ -1,56 +1,19 @@
+inherit_mode:
+  merge:
+    - Exclude
+    - IgnoredPatterns
+
+inherit_gem:
+  radius-spec: common_rubocop_rails.yml
+
 AllCops:
   Exclude:
-    # Ignore Bundler standalone config
-    - 'bundle/**/*'
-    # Ignore bundler generated binstubs
-    - 'bin/**/*'
+    - 'bin/console'
+    - 'bin/setup'
+    - 'bin/update'
+    - 'bin/yri'
+    - 'bin/yardoc'
+    - 'Rakefile'
 
-AccessModifierIndentation:
-  EnforcedStyle: outdent
-
-AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: table
-
-AlignParameters:
-  EnforcedStyle: with_first_parameter
-
-BlockDelimiters:
-  EnforcedStyle: semantic
-
-# We use YARD to enforce documentation. It works better than rubocop's
-# enforcement...rubocop complains about the places we re-open
-# `RSpec::Expectations` and `RSpec::Matchers` w/o having doc commments.
-Documentation:
+Layout/AlignHash:
   Enabled: false
-
-# Most uses of double negation are bad but we use `!!obj` as predicate method
-# returns
-DoubleNegation:
-  Enabled: false
-
-# This complains about aligning multiline method chaining with the dots
-MultilineOperationIndentation:
-  Enabled: false
-
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%':  ()      # double-quoted string
-    '%i': '[]'    # array of symbols
-    '%q': ()      # single-quoted string
-    '%Q': ()      # double-quoted string
-    '%r': '{}'    # regular expression pattern
-    '%s': ()      # a symbol
-    '%w': '[]'    # array of single-quoted strings
-    '%W': '[]'    # array of double-quoted strings
-    '%x': ()      # a shell command as a string
-
-RedundantReturn:
-  AllowMultipleReturnValues: true
-
-# We don't care about single vs double qoutes.
-StringLiterals:
-  Enabled: false
-
-TrailingComma:
-  EnforcedStyleForMultiline: comma
