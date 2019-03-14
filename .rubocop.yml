@@ -17,7 +17,3 @@ AllCops:
 
 Layout/AlignHash:
   Enabled: false
-
-Rails/DynamicFindBy:
-  Whitelist:
-    - find_by_composite_token
