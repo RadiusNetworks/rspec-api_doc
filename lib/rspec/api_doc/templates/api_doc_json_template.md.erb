@@ -10,7 +10,7 @@
 <% end %>
 <% sections.each do |section| %>
 
-## <%= section.header %> <a href="#<%= section.header_ref %>" class="header-link"></a>
+## <span id="<%= section.header_ref %>"><%= section.header %></span>
 
 <% if section.recorded_request? %>
 ```
