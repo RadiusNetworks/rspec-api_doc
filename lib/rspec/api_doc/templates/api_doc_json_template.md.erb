@@ -42,7 +42,7 @@ All <%= resource %> **must** be sent in an array nested under a top level
 <% end %>
 
 <% if section.recorded_request? %>
-### Example <a href="#<%= section.header_ref %>-example" class="header-link"></a>
+### <span id="<%= section.header_ref %>-example">Example</span>
 
 <% if section.example_explanation.present? %>
 <%= section.example_explanation %>
@@ -56,7 +56,7 @@ All <%= resource %> **must** be sent in an array nested under a top level
 <% end %>
 <% end %>
 <% if section.recorded_response? %>
-### Response <a href="#<%= section.header_ref %>-response" class="header-link"></a>
+### <span id="<%= section.header_ref %>-response">Response</span>
 
 ```http
 Status: <%= section.response_status %>
@@ -72,7 +72,7 @@ Status: <%= section.response_status %>
 ```
 <% end %>
 
-### Curl Example <a href="#<%= section.header_ref %>-curl-example" class="header-link"></a>
+### <span id="<%= section.header_ref %>-curl-example">Curl Example</span>
 
 ```sh
 <%= RSpec::ApiDoc::StandardCurlExample.new(section).build %>
