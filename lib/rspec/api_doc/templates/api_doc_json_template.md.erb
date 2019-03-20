@@ -25,10 +25,14 @@
 
 <% end %>
 <% if section.parameters? %>
-### Parameters <a href="#<%= section.header_ref %>-parameters" class="header-link"></a>
+### <span id="<%= section.header_ref %>-parameters">Parameters</span>
 
+<% if section.custom_parameters_info %>
+<%= section.custom_parameters_info %>
+<% else %>
 All <%= resource %> **must** be sent in an array nested under a top level
 `<%= resource %>` parameter.
+<% end %>
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
