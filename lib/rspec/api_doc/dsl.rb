@@ -86,6 +86,14 @@ module RSpec
         @parameters ||= []
       end
 
+      def parameters_info(value)
+        @custom_parameters_info = value
+      end
+
+      def custom_parameters_info
+        @custom_parameters_info
+      end
+
       attr_accessor :response, :request, :include_headers
 
     private

@@ -10,6 +10,7 @@ module RSpec
       include Explainable
 
       attr_reader :parameters,
+                  :custom_parameters_info,
                   :header,
                   :header_ref,
                   :example_explanation
@@ -18,6 +19,7 @@ module RSpec
         @header = Strings.titleize(example_group.description.strip)
         @header_ref = Strings.pretty_escape(@header.downcase)
         @parameters = example_group.parameters
+        @custom_parameters_info = example_group.custom_parameters_info
         @explanation_parts = example_group.explanation_parts
         @example_explanation = example_group.example_explanation
         # Necessary for now to get the request and response
