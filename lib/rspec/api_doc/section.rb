@@ -43,7 +43,7 @@ module RSpec
       end
 
       def request_path
-        @_group.request.path_info unless @_group.request.nil?
+        @_group.request.fullpath unless @_group.request.nil?
       end
 
       def recorded_request?
