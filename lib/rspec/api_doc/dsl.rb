@@ -30,15 +30,25 @@ module RSpec
       endpoint_macro :collection_endpoint
 
       def use_host(host)
+        uri = URI.parse(host)
+        host = uri.host
+        protocol = uri.scheme || "https"
         around do |ex|
           org_host = default_url_options[:host]
+          org_protocol = default_url_options[:protocol]
           default_url_options[:host] = host
+          default_url_options[:protocol] = protocol
           ex.run
           # Rails dislikes an explicit `nil` as the host, so check first
           if org_host
             default_url_options[:host] = org_host
           else
             default_url_options.delete(:host)
+          end
+          if org_protocol
+            default_url_options[:protocol] = org_protocol
+          else
+            default_url_options.delete(:protocol)
           end
         end
       end
