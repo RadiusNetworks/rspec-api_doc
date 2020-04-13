@@ -41,7 +41,7 @@ All <%= resource %> **must** be sent in an array nested under a top level
 | `<%= parameter.name %>` | `<%= parameter.type %>` | <%= '**Required.** ' if parameter.required? %><%= parameter.description %> |
 <% end %>
 
-<% if section.recorded_request? %>
+<% if section.recorded_request? && section.request_json.present? %>
 ### <span id="<%= section.header_ref %>-example">Example</span>
 
 <% if section.example_explanation.present? %>
